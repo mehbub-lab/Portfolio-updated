@@ -1,0 +1,276 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-inter), sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.025em;
+  }
+  .font-mono {
+    font-family: var(--font-martian-mono), monospace;
+  }
+}
+
+/* Custom animation for particles */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Hide scrollbar but allow scrolling */
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+/* Custom background color for the main section */
+.bg-deep-teal {
+  background-color: #002029;
+}
+
+/* Loading Animation Styles */
+.animation-loader {
+  position: relative;
+  width: 176px;
+  height: 176px;
+}
+
+.animation-loader__wrapper {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  background-color: #002029;
+  height: 100%;
+  width: 100vw;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  transition: opacity 0.5s ease-out;
+}
+
+.animation-loader__circle {
+  width: 176px;
+  height: 176px;
+  border-radius: 50%;
+  background-color: #5eead4;
+  animation: pulse-animation 2s infinite;
+}
+
+.animation-loader__outline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 176px;
+  height: 176px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-space-mono), monospace;
+  font-size: 64px;
+  font-weight: bold;
+  color: #002029;
+  animation: rotate-animation 8s linear infinite;
+}
+
+/* Fix the malformed CSS in the pulse-animation keyframes */
+@keyframes pulse-animation {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(94, 234, 212, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 20px rgba(94, 234, 212, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(94, 234, 212, 0);
+  }
+}
+
+@keyframes rotate-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(3deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-3deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Typing effect cursor animation */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Hover transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom animation classes for scroll reveal */
+.rotateY-90 {
+  transform: rotateY(90deg);
+}
+
+/* Add custom delays and durations - use with transition-delay and transition-duration */
+.delay-100ms {
+  transition-delay: 100ms;
+}
+.delay-200ms {
+  transition-delay: 200ms;
+}
+.delay-300ms {
+  transition-delay: 300ms;
+}
+.delay-400ms {
+  transition-delay: 400ms;
+}
+.delay-500ms {
+  transition-delay: 500ms;
+}
+.delay-600ms {
+  transition-delay: 600ms;
+}
+.delay-700ms {
+  transition-delay: 700ms;
+}
+.delay-800ms {
+  transition-delay: 800ms;
+}
+.delay-900ms {
+  transition-delay: 900ms;
+}
+.delay-1000ms {
+  transition-delay: 1000ms;
+}
+
+.duration-300ms {
+  transition-duration: 300ms;
+}
+.duration-400ms {
+  transition-duration: 400ms;
+}
+.duration-500ms {
+  transition-duration: 500ms;
+}
+.duration-600ms {
+  transition-duration: 600ms;
+}
+.duration-700ms {
+  transition-duration: 700ms;
+}
+.duration-800ms {
+  transition-duration: 800ms;
+}
+.duration-900ms {
+  transition-duration: 900ms;
+}
+.duration-1000ms {
+  transition-duration: 1000ms;
+}
+
+.code-tag {
+  font-family: var(--font-martian-mono), monospace;
+  color: #5eead4;
+}
