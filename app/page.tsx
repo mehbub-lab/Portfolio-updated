@@ -584,7 +584,6 @@ export default function Home() {
 
         <footer className="py-6 px-4 bg-slate-950 text-slate-400 text-center text-sm">
           <p>© {new Date().getFullYear()} Mehbub Muztaba Mazumder. All Rights Reserved.</p>
-          <p className="mt-2">Built with Next.js and Tailwind CSS</p>
         </footer>
         {/* Certificate Modal */}
         {showCertificate && (
