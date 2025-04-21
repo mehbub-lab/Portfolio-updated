@@ -536,7 +536,7 @@ export default function Home() {
             </ScrollReveal>
 
             <ScrollReveal variant="zoom-in" delay={0.4}>
-              <Link href="mailto:mehbubmuztaba@gmail.com">
+              <Link href="mailto:connect@mehbubmuztaba.tech">
                 <Button className="bg-[#5eead4] hover:bg-[#5eead4]/80 text-slate-900 hover:scale-105 transition-transform">
                   Say Hello
                 </Button>
@@ -567,7 +567,7 @@ export default function Home() {
                   </Button>
                 </Link>
 
-                <Link href="mailto:mehbubmuztaba@gmail.com">
+                <Link href="mailto:connect@mehbubmuztaba.tech">
                   <Button
                     variant="ghost"
                     size="icon"
