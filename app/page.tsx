@@ -256,7 +256,7 @@ export default function Home() {
                   </Button>
                 </Link>
 
-                <Link href="mailto:mehbubmuztaba@gmail.com">
+                <Link href="mailto:connect@mehbubmuztaba.tech">
                   <Button
                     variant="outline"
                     size="icon"
