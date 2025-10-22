@@ -144,7 +144,7 @@ export default function Home() {
       company: "DarkLead!",
       logo: "/images/darkleadlogo.png",
       type: "Self-employed",
-      period: "Apr 2025 - Present · 7 mo",
+      period: "Apr 2025 - Present · 7 mos",
       location: "Tiruchirappalli, Tamil Nadu, India · On-site",
       skills: ["Community Management", "Ethical Hacking"],
       description:
@@ -165,7 +165,7 @@ export default function Home() {
       company: "SRM Institute of Science and Technology",
       logo: "/images/cyberanzen-logo.jpeg",
       type: "Full-time · 4 mos",
-      period: "Apr 2025 - September 2025 · 6 mo",
+      period: "Apr 2025 - September 2025 · 6 mos",
       location: "Tamil Nadu, India",
       skills: ["Event Management", "Event Planning"],
       description:
